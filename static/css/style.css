@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff7e6;
+    text-align: center;
+}
+
+header {
+    background-color: orange;
+    color: white;
+    padding: 30px;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 40px;
+}
+
+.card {
+    background-color: white;
+    width: 400px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkorange;
+}
