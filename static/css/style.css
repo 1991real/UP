@@ -41,3 +41,22 @@ button {
 button:hover {
     background-color: darkorange;
 }
+input,
+select,
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+img {
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+}

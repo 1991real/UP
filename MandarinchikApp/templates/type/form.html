@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Тип мандарина
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Тип мандарина</h2>
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Сохранить
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

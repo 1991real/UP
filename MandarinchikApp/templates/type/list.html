@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Типы мандаринов
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Типы мандаринов</h2>
+
+    <a href="{% url 'type_create' %}">
+        <button>Добавить тип</button>
+    </a>
+
+    <hr>
+
+    {% for type in types %}
+
+        <h3>{{ type.name }}</h3>
+
+        <a href="{% url 'type_detail' type.id %}">
+            <button>Подробнее</button>
+        </a>
+
+        <br><br>
+
+    {% empty %}
+        <p>Типов пока нет.</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

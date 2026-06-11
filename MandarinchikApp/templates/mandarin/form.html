@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Форма{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Мандарин</h2>
+
+    <form method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Сохранить
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

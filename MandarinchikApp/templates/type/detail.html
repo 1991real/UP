@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Тип мандарина
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>{{ type_obj.name }}</h2>
+
+    <p>
+        <b>ID:</b>
+        {{ type_obj.id }}
+    </p>
+
+    <a href="{% url 'type_update' type_obj.id %}">
+        <button>Изменить</button>
+    </a>
+
+    <a href="{% url 'type_delete' type_obj.id %}">
+        <button>Удалить</button>
+    </a>
+
+    <br><br>
+
+    <a href="{% url 'type_list' %}">
+        Назад
+    </a>
+
+</div>
+
+{% endblock %}

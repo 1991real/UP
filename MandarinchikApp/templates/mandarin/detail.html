@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Мандарин{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>{{ mandarin.type }}</h2>
+
+    {% if mandarin.image %}
+        <img src="{{ mandarin.image.url }}"
+             width="250">
+    {% endif %}
+
+    <p><b>Тип:</b> {{ mandarin.type }}</p>
+    <p><b>Страна:</b> {{ mandarin.country }}</p>
+    <p><b>Цвет:</b> {{ mandarin.color }}</p>
+    <p><b>Цена:</b> {{ mandarin.price }} ₽</p>
+
+    <br>
+
+    <a href="{% url 'mandarin_update' mandarin.id %}">
+        <button>Изменить</button>
+    </a>
+
+    <a href="{% url 'mandarin_delete' mandarin.id %}">
+        <button>Удалить</button>
+    </a>
+
+    <br><br>
+
+    <a href="{% url 'mandarin_list' %}">
+        ← Назад
+    </a>
+
+</div>
+
+{% endblock %}

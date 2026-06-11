@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Страны-производители
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Страны-производители</h2>
+
+    <a href="{% url 'country_create' %}">
+        <button>Добавить страну</button>
+    </a>
+
+    <hr>
+
+    {% for country in countries %}
+
+        <h3>{{ country.country }}</h3>
+
+        <a href="{% url 'country_detail' country.id %}">
+            <button>Подробнее</button>
+        </a>
+
+        <br><br>
+
+    {% empty %}
+        <p>Стран пока нет.</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

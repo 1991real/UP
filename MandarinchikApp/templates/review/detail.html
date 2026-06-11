@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Отзыв
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Отзыв №{{ review.id }}</h2>
+
+    <p>
+        <b>Мандарин:</b>
+        {{ review.mandarin }}
+    </p>
+
+    <p>
+        <b>Оценка:</b>
+        {{ review.rating }}
+    </p>
+
+    <p>
+        <b>Комментарий:</b>
+        {{ review.comment }}
+    </p>
+
+    <a href="{% url 'review_update' review.id %}">
+        <button>Изменить</button>
+    </a>
+
+    <a href="{% url 'review_delete' review.id %}">
+        <button>Удалить</button>
+    </a>
+
+    <br><br>
+
+    <a href="{% url 'review_list' %}">
+        Назад
+    </a>
+
+</div>
+
+{% endblock %}

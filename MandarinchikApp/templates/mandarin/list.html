@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Список мандаринов{% endblock %}
+
+{% block content %}
+
+<div class="card">
+    <h2>Все мандарины</h2>
+
+    <a href="{% url 'mandarin_create' %}">
+        <button>Добавить мандарин</button>
+    </a>
+
+    <hr>
+
+    {% for mandarin in mandarins %}
+
+        <h3>{{ mandarin.type }}</h3>
+
+        {% if mandarin.image %}
+            <img src="{{ mandarin.image.url }}"
+                 width="200">
+        {% endif %}
+
+        <p>Цена: {{ mandarin.price }} ₽</p>
+
+        <a href="{% url 'mandarin_detail' mandarin.id %}">
+            <button>Подробнее</button>
+        </a>
+
+        <br><br>
+
+    {% empty %}
+        <p>Мандарины отсутствуют.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Цвет
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>{{ color.name }}</h2>
+
+    <p>
+        <b>ID:</b> {{ color.id }}
+    </p>
+
+    <a href="{% url 'color_update' color.id %}">
+        <button>Изменить</button>
+    </a>
+
+    <a href="{% url 'color_delete' color.id %}">
+        <button>Удалить</button>
+    </a>
+
+    <br><br>
+
+    <a href="{% url 'color_list' %}">
+        Назад
+    </a>
+
+</div>
+
+{% endblock %}

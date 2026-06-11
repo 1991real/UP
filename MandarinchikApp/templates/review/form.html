@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Отзыв
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Форма отзыва</h2>
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Сохранить
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

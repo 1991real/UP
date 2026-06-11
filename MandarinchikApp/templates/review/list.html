@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Отзывы
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Отзывы</h2>
+
+    <a href="{% url 'review_create' %}">
+        <button>Добавить отзыв</button>
+    </a>
+
+    <hr>
+
+    {% for review in reviews %}
+
+        <p>
+            <b>Мандарин:</b>
+            {{ review.mandarin }}
+        </p>
+
+        <p>
+            <b>Оценка:</b>
+            {{ review.rating }}
+        </p>
+
+        <a href="{% url 'review_detail' review.id %}">
+            <button>Подробнее</button>
+        </a>
+
+        <br><br>
+
+    {% empty %}
+        <p>Отзывов пока нет.</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

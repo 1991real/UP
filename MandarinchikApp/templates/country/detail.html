@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Страна
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>{{ country.country }}</h2>
+
+    <p>
+        <b>ID:</b> {{ country.id }}
+    </p>
+
+    <a href="{% url 'country_update' country.id %}">
+        <button>Изменить</button>
+    </a>
+
+    <a href="{% url 'country_delete' country.id %}">
+        <button>Удалить</button>
+    </a>
+
+    <br><br>
+
+    <a href="{% url 'country_list' %}">
+        Назад
+    </a>
+
+</div>
+
+{% endblock %}

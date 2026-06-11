@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Цвета
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Цвета мандаринов</h2>
+
+    <a href="{% url 'color_create' %}">
+        <button>Добавить цвет</button>
+    </a>
+
+    <hr>
+
+    {% for color in colors %}
+
+        <h3>{{ color.name }}</h3>
+
+        <a href="{% url 'color_detail' color.id %}">
+            <button>Подробнее</button>
+        </a>
+
+        <br><br>
+
+    {% empty %}
+        <p>Цветов пока нет.</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
